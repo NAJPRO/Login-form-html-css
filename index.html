@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+        <!-- FontAwesome 6.2.0 CSS -->
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+    <!-- <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h2>Login Form</h2>
+        </div>
+
+        <form action="">
+            <div class="input-field">
+                <input type="text" id="user" required>
+                <label>Email or Username</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="password" required>
+                <label>Password</label>
+                <span class="show">SHOW</span>
+            </div>
+            <div class="button">
+                <div class="inner"></div>
+                <button>LOGIN</button>
+            </div>
+        </form>
+        <div class="auth">Or login with</div>
+        <div class="links">
+            <div class="facebook">
+                 <i class="fab fa-facebook-square face"></i><span>Facebook</span>
+            </div>
+            <div class="google">
+                 <i class="fab fa-google-plus-square goog"></i><span>Google</span>
+            </div>
+        </div>
+        <div class="signup">
+            Not a member ? <a href="">Signup now</a>
+        </div>
+    </div>
+
+
+    <script>
+        const input = document.querySelector('#password')
+        const show = document.querySelector('.show')
+
+        show.addEventListener('click', () => {
+            if(input.type === 'password'){
+                input.type = 'text'
+                show.style.color = '#1DA1F2'
+                show.textContent = "HIDE"
+            }else{
+                input.type = 'password'
+                show.textContent = "SHOW"
+                show.style.color = '#111'
+
+            }
+        })
+    </script>
+
+    
+</body>
+</html>
