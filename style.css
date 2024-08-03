@@ -56,6 +56,7 @@ body{
     outline: none;
     margin-top: 3px;
     font-size: 20px;
+    padding-left: 25px;
 
 }
 
@@ -65,13 +66,14 @@ input:valid ~ label{
     font-size: 20px;
     color: #3498db;
     padding-left: 0;
+    /* padding-left: 25px; */
+
 
 }
 .input-field input:focus{
     border: 2px solid violet;
-    padding-left: 10px;
 }
-input:valid ~ .show{
+/* input:valid ~ .show{
     visibility: visible;
 }
 .show{
@@ -83,15 +85,17 @@ input:valid ~ .show{
     font-weight: bold;
     user-select: none;
     visibility: hidden;
-}
+} */
 
 .input-field label{
     font-size: 18px;
-    transform: translateY(33px);
+    transform: translateY(37px);
     padding-left: 10px;
     pointer-events: none;
     color: grey;
     transition: .4s;
+    padding-left: 28px;
+
 }
 .button{
     width: 100%;
@@ -183,8 +187,61 @@ input:valid ~ .show{
     text-decoration: underline;
 }
 
+.lock{
+    position: relative;
+    transform: translateY(-30px);
+    margin-left: 5px;
+    user-select: none;
+    pointer-events: none;
+}
+
+.lock .lock-no-open, .lock .lock-open{
+    position: absolute;
+    font-size: 20px;
+}
+.lock .lock-open{
+    visibility: hidden;
+}
+
+.user-fa{
+    transform: translateY(-30px);
+    font-size: 20px;
+    margin-left: 5px;
+    user-select: none;
+    pointer-events: none;
+}
+
+.show-eye{
+    position: relative;
+    font-size: 20px;
+    left: 335px;
+    transform: translateY(35px);
+}
+
+/* .show-eye .eye-no-show, .show-eye .eye-show{
+    position: absolute;
+    visibility: hidden;
+
+} */
+.show-eye .eye-no-show{
+    position: absolute;
+    /* visibility: visible; */
+
+}
+.show-eye .eye-show{
+    position: absolute;
+    /* visibility: hidden; */
+    display: none;
+
+}
+
+/* 
+input:valid ~ .show-eye .eye-no-show{
+    visibility: visible;
+} */
 
 ::-ms-reveal {
     display: none;
   }
+
   

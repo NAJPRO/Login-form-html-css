@@ -31,13 +31,35 @@
 
         <form action="">
             <div class="input-field">
+                <span class="user-fa">
+                    <i class="fa-solid fa-user"></i>
+                </span>
                 <input type="text" id="user" required>
                 <label>Email or Username</label>
             </div>
             <div class="input-field">
+                <div class="lock">
+                    <span class="lock-open">
+                        <i class="fa-solid fa-lock-open "></i>
+                    </span>
+                    <span class="lock-no-open">
+
+                        <i class="fa-solid fa-lock "></i>
+                    </span>
+
+                </div>
+                
                 <input type="password" id="password" required>
                 <label>Password</label>
-                <span class="show">SHOW</span>
+                <div class="show-eye">
+                    <span class="eye-no-show">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </span>
+                    <span class="eye-show">
+                        <i class="fa-solid fa-eye"></i>
+                    </span>
+                </div>
+                <!-- <span class="show"><i class="fa-solid far fa-eye-slash"></i></span> -->
             </div>
             <div class="button">
                 <div class="inner"></div>
@@ -61,17 +83,30 @@
 
     <script>
         const input = document.querySelector('#password')
-        const show = document.querySelector('.show')
-
-        show.addEventListener('click', () => {
+        const showselect = document.querySelector('.show-eye')
+        const noShowEye = document.querySelector('.show-eye .eye-no-show')
+        const showEye = document.querySelector('.show-eye .eye-show')
+        const form = document.querySelector('form')
+        const userock = document.querySelector('.lock-no-open')
+        const userockOpen = document.querySelector('.lock-open')
+        
+        showselect.addEventListener('click', () => {
             if(input.type === 'password'){
                 input.type = 'text'
-                show.style.color = '#1DA1F2'
-                show.textContent = "HIDE"
+                noShowEye.style.display = 'none'
+                showEye.style.display = 'block'
+                showEye.style.color = '#3498db'
+                userock.style.visibility = 'hidden'
+                userockOpen.style.visibility = 'visible'
+                // form.style.display = 'none'
+
             }else{
+                  noShowEye.style.display = 'block'
+                showEye.style.display = 'none'
                 input.type = 'password'
-                show.textContent = "SHOW"
-                show.style.color = '#111'
+
+                userock.style.visibility = 'visible'
+                userockOpen.style.visibility = 'hidden'
 
             }
         })
